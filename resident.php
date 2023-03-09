@@ -516,7 +516,7 @@
                                         <label>Vital Status</label><br>
                                         <div class="selectgroup selectgroup-secondary selectgroup-pills">
                                             <label class="selectgroup-item">
-                                                <input type="radio" name="deceased" value="1" class="selectgroup-input" checked id="alive">
+                                                <input type="radio" name="deceased" value="1" class="selectgroup-input" checked="" id="alive">
                                                 <span class="selectgroup-button selectgroup-button-icon"><i class="fa fa-walking"></i></span>
                                             </label><p class="mt-1 mr-3"><b>Alive</b></p>
                                             <label class="selectgroup-item">
