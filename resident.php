@@ -2,7 +2,7 @@
 <?php 
 	
     if (isset($_GET['id'])) {
-        $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type, r.occupation, r.citizenship, s.status_name FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id where r.active!='no' AND r.stat_id =".$_GET['id'];
+        $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type, r.occupation, r.citizenship, s.status_name FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id where r.active!='no' AND r.stat_id ='".$_GET['id']."'";
     } else {
          $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type, r.occupation, r.citizenship FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id  WHERE r.active!='no'";
     } 
@@ -17,10 +17,13 @@
          $stat_list[] = $ss['status_name'];
     }
 
+    //$order = "SELECT * FROM tblresident ORDER BY 'id' DESC";
+
     $resident = array();
 	while($row = $result->fetch_assoc()){
 		$resident[] = $row; 
 	}
+    
     $query2 = "SELECT * FROM tbl_household ORDER BY `household`";
     $result2 = $conn->query($query2);
 
@@ -152,6 +155,7 @@
 										<table id="residenttable" class="display table table-striped remove_id">
 											<thead>
 												<tr>
+                                                    <th scope="col">No.</th>
 													<th scope="col">Full Name</th>
                                                     <th scope="col">National ID</th>
 													<th scope="col">Alias</th>
@@ -175,6 +179,7 @@
 												<?php if(!empty($resident)): ?>
 													<?php $no=1; foreach($resident as $row): ?>
 													<tr>
+                                                        <td><?= $row['id'] ?></td>
 														<td>
                                                             <div class="avatar avatar-xs">
                                                                 <img src="<?= preg_match('/data:image/i', $row['picture']) ? $row['picture'] : 'assets/uploads/resident_profile/'.$row['picture'] ?>" alt="Resident Profile" class="avatar-img rounded-circle">
@@ -246,6 +251,7 @@
 
 											<tfoot>
 												<tr>
+                                                    <th scope="col">No.</th>
                                                     <th scope="col">Full Name</th>
                                                     <th scope="col">National ID</th>
 													<th scope="col">Alias</th>
