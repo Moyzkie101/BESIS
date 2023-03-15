@@ -2,9 +2,9 @@
 <?php 
 	
     if (isset($_GET['id'])) {
-        $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type s.status_name FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id where r.active!='no' AND r.stat_id =".$_GET['id'];
+        $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type, r.occupation, r.citizenship, s.status_name FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id where r.active!='no' AND r.stat_id =".$_GET['id'];
     } else {
-         $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id  WHERE r.active!='no'";
+         $query = "SELECT r.id, r.picture, r.national_id,r.firstname,r.middlename,r.lastname,r.alias,r.household,r.birthplace,r.birthdate,DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), r.birthdate)), '%Y') + 0 AS age,r.civilstatus,r.gender,r.purok,r.voterstatus,r.identified_as,r.phone,r.email, r.resident_type, r.occupation, r.citizenship FROM tblresident AS r LEFT JOIN status AS s ON r.stat_id=s.stat_id  WHERE r.active!='no'";
     } 
 
     $result = $conn->query($query);
