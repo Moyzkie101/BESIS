@@ -17,18 +17,17 @@
          $stat_list[] = $ss['status_name'];
     }
 
-    //$order = "SELECT * FROM tblresident ORDER BY 'id' DESC";
-
     $resident = array();
 	while($row = $result->fetch_assoc()){
 		$resident[] = $row; 
 	}
     
+
     $query2 = "SELECT * FROM tbl_household ORDER BY `household`";
     $result2 = $conn->query($query2);
 
     $household = array();
-	while($row = $result2->fetch_assoc()){
+	while($row = $result2->fetch_assoc()){ 
 		$household[] = $row; 
 	}
 
