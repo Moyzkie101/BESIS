@@ -125,7 +125,7 @@
 																		data-chair="<?= $row['chair_id'] ?>" data-pos="<?= $row['pos_id'] ?>"
                                                                        data-num="<?= $row['num'] ?>"
                                                                        data-start="<?= $row['termstart'] ?>" 
-																		data-end="<?= $row['termend'] ?>" data-status="<?= $row['status'] ?>" >
+																		data-end="<?= $row['termend'] ?>" data-contact="<?= $row['contact'] ?>" data-status="<?= $row['status'] ?>" >
 																		<i class="fa fa-edit"></i>
 																	</a>
 																	<?php if($_SESSION['role']=='administrator'):?>

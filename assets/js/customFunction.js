@@ -64,7 +64,8 @@ function editOfficial(that){
     pos = $(that).attr('data-pos');
     start = $(that).attr('data-start');
     end = $(that).attr('data-end');
-    status = $(that).attr('data-status');
+    contact = $(that).attr('data-contact');
+    stats = $(that).attr('data-status');
 
     $('#off_id').val(id);
     $('#name').val(na);
@@ -72,7 +73,8 @@ function editOfficial(that){
     $('#position').val(pos);
     $('#start').val(start);
     $('#end').val(end);
-    $('#status').val(status);
+    $('#contact').val(contact);
+    $('#status').val(stats);
 }
 
 function editResident(that){
