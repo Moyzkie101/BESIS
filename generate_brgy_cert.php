@@ -70,9 +70,9 @@
 									</div>
 								</div>
 								<div class="card-body m-5" id="printThis">
-                                  <div class="d-flex flex-wrap justify-content-around" style="border-bottom:1px solid red">
+                                <div class="d-flex flex-wrap justify-content-around" style="border-bottom:1px solid red">
                                         <div class="text-center">
-                                           <!--  <img src="assets/uploads/<?= $city_logo ?>" class="img-fluid" width="100"> -->
+                                            <img src="assets/uploads/<?= $city_logo ?>" class="img-fluid" width="100">
 										</div>
 										<div class="text-center">
                                             <h3 class="mb-0">Republic of the Philippines</h3>
@@ -82,36 +82,36 @@
                                             <p><i>Mobile No. <?= $number ?></i></p>
 										</div>
                                         <div class="text-center">
-                                           <!--  <img src="assets/uploads/<?= $brgy_logo ?>" class="img-fluid" width="100"> -->
+                                            <img src="assets/uploads/<?= $brgy_logo ?>" class="img-fluid" width="100">
 										</div>
 									</div>
                                     <div class="d-flex flex-wrap justify-content-center" >
  
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="text-center">
-                                                <h2 class="mt-4 fw-bold">OFFICE OF THE BARANGAY CAPTAIN</h2>
+                                                <h2 class="mt-4 fw-bold"><u>OFFICE OF THE BARANGAY CAPTAIN</u></h2>
                                             </div>
                                             <div class="text-center">
                                                 <h1 class="mt-4 fw-bold mb-5">BARANGAY CLEARANCE</h1>
                                             </div>
                                             <h2 class="mt-5">TO WHOM IT MAY CONCERN:</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px;">This is to certify that <span class="fw-bold" style="font-size:25px"><?= ucwords($resident['firstname'].' '.$resident['middlename'].' '.$resident['lastname']) ?></span>
-                                            , of legal age, <span class="fw-bold" style="font-size:25px"><?= ucwords($resident['gender']) ?></span>, <span class="fw-bold" style="font-size:25px"><?= ucwords($resident['civilstatus']) ?></span>,
-                                            and Filipino is a resident of <span class="fw-bold" style="font-size:25px"><?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?> </span> known to be a person tha has never been charged of any crime nor misdemeanor as to date of issue, a person of good moral character.</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2>
-                                            <h2 class="mt-5">Issued this <span class="fw-bold" style="font-size:25px"><?= date('m/d/Y') ?>.</span></h2>
-                                            <h2 class="text-uppercase" style="margin-top:100px; margin-bottom:100px;">NOT VALID WITHOUT SEAL:</h2>
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].' '.$resident['lastname']) ?></u>,</span>
+                                             of legal age, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['gender']) ?></u></span>, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['civilstatus']) ?></u></span>,
+                                            and a <span class="fw-bold" style="font-size:25px"><u> <?= ucwords($resident['citizenship']) ?></u></span> citizen, is a resident of <span class="fw-bold" style="font-size:25px"><u><?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?></u>, </span>has never been charged of any crime or misdemeanor as to date of issue, and is a person of good moral character.</h2>
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2>
+                                            <h2 class="mt-3">Issued this <span class="fw-bold" style="font-size:20px"><u><?= date('m/d/Y') ?></u>.</span></h2><br><br>
+                                            <h2 class="mt-3" text-uppercase" style="margin-top:100px; margin-bottom:100px;">NOT VALID WITHOUT SEAL:</h2>
 
                                         </div>
                                         
                                         <div class="col-md-12 ">
                                             <div class=" text-left  justify-content-end">
-                                                <h2 class="fw-bold mb-0 text-uppercase" style="margin-bottom:200px;"><?= empty($sec['name']) ? 'Please Create Official with Secretary Position' : ucwords($sec['name']) ?></h2>
-                                                <p class="ml-2" >BARANGAY SECRETARY</p>
+                                                <h2 class="mt-4 fw-bold mb-5" text-uppercase"  style="margin-bottom:100px;"><?= empty($sec['name']) ? 'PLEASE CREATE OFFICIAL WITH SECRETARY POSITION: ': ucwords($sec['name']) ?></h2>
+                                                <h2 class="ml-3" >BARANGAY SECRETARY</h2>
                                             </div>
                                             <div class="text-left" style="margin-top:100px;">
                                                 <h2 class="fw-bold mb-0 text-uppercase"><?= ucwords($captain['name']) ?></h2>
-                                                <p class="mr-3">PUNONG BARANGAY</p>
+                                                <h2 class="mt-3" >PUNONG BARANGAY</h2>
                                             </div>
                                         </div>
                                       <!--- <div class="col-md-12 d-flex flex-wrap justify-content-end">
