@@ -69,19 +69,19 @@
 									</div>
 								</div>
 								<div class="card-body m-5" id="printThis">
-                                    <div class="d-flex flex-wrap justify-content-around" style="border-bottom:1px solid red">
+                                <div class="d-flex flex-wrap justify-content-around" style="border-bottom:1px solid red">
                                         <div class="text-center">
-                                          <!--   <img src="assets/uploads/<?= $city_logo ?>" class="img-fluid" width="100"> -->
+                                            <img src="assets/uploads/<?= $city_logo ?>" class="img-fluid" width="100">
 										</div>
 										<div class="text-center">
                                             <h3 class="mb-0">Republic of the Philippines</h3>
                                             <h3 class="mb-0">Province of <?= ucwords($province) ?></h3>
 											<h3 class="mb-0">Municipality of <?= ucwords($town) ?></h3>
-											<h1 class="fw-bold mb-0">Barangay <?= ucwords($brgy) ?></i></h2>
+											<h1 class="fw-bold mb-0">Barangay <?= ucwords($brgy) ?></h1>
                                             <p><i>Mobile No. <?= $number ?></i></p>
 										</div>
                                         <div class="text-center">
-                                           <!--  <img src="assets/uploads/<?= $brgy_logo ?>" class="img-fluid" width="100"> -->
+                                            <img src="assets/uploads/<?= $brgy_logo ?>" class="img-fluid" width="100">
 										</div>
 									</div>
                                     <div class="row mt-2">
@@ -103,9 +103,9 @@
                                                 <hr class="w-50 mt-0 mb-0" style="border-top: 2px solid black;">
                                                 <h2 class="mt-0">NAME OF BUSINESS OR ESTABLISHMENT</h2>
                                             </div>
-                                            <h2 class="mt-5" style="text-indent: 40px;">This clearance is granted in accordance with section 152 of R.A. 7160 of Barangay Tax Ordinance, provided however, that the necessary fees are paid to the Barangay Treasurer.</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px;">This is non-transferable and shall be deemed null and void upon failure by the owner to follow the said rules and regulations set forth by the Local Government Unit of <span style="font-size:22px"><?= ucwords($town) ?>.</h2>
-                                            <h2 class="mt-5">Given this <span class="fw-bold" style="font-size:20px"><?= date('m/d/Y') ?></span> at <span style="font-size:20px"><?= ucwords($brgy.', '.$town) ?></span>.</h2>
+                                            <h2 class="mt-5" style="text-indent: 40px; text-align: justify;">This clearance is granted in accordance with <span class="fw-bold" style="font-size:20px">Section 152 of R.A. 7160 of Barangay Tax Ordinance</span>, provided however, that the necessary fees are paid to the Barangay Treasurer.</h2>
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is non-transferable and shall be deemed null and void upon failure by the owner to follow the said rules and regulations set forth by the Local Government Unit of <span style="font-size:22px"><?= ucwords($town) ?>.</h2>
+                                            <h2 class="mt-5">Given this <span class="fw-bold" style="font-size:20px"><u><?= date('m/d/Y') ?></u></span> at <span style="font-size:20px"><?= ucwords($brgy.', '.$town) ?></span>.</h2>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-3 text-right mr-5" style="margin-top:120px">

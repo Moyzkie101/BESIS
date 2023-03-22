@@ -92,11 +92,11 @@
                                                 <h2 class="mt-4 fw-bold"><u>OFFICE OF THE BARANGAY CAPTAIN</u></h2>
                                             </div>
                                             <div class="text-center">
-                                                <h1 class="mt-4 fw-bold mb-5">BARANGAY CLEARANCE</h1>
+                                                <h1 class="mt-4 fw-bold mb-5">BARANGAY CLEARANCE</h1><br>
                                             </div>
                                             <h2 class="mt-5">TO WHOM IT MAY CONCERN:</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].' '.$resident['lastname']) ?></u>,</span>
-                                             of legal age, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['gender']) ?></u></span>, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['civilstatus']) ?></u></span>,
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].'. '.$resident['lastname']) ?></u>,</span>
+                                             is of legal age, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['gender']) ?></u></span>, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['civilstatus']) ?></u></span>,
                                             and a <span class="fw-bold" style="font-size:25px"><u> <?= ucwords($resident['citizenship']) ?></u></span> citizen, is a resident of <span class="fw-bold" style="font-size:25px"><u><?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?></u>, </span>has never been charged of any crime or misdemeanor as to date of issue, and is a person of good moral character.</h2>
                                             <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2>
                                             <h2 class="mt-3">Issued this <span class="fw-bold" style="font-size:20px"><u><?= date('m/d/Y') ?></u>.</span></h2><br><br>

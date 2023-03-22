@@ -107,16 +107,16 @@
 
                                             <br><br>
                                             <h2 class="mt-6" fw-bold">TO WHOM IT MAY CONCERN:</h2>
-                                            <br>
-                                            <h2 class="mt-5" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].' '.$resident['lastname']) ?></u>, </span>
-                                            of legal age, is a bonafide resident of <u><span class="fw-bold" style="font-size:25px">Purok <?= ucwords($resident['purok']) ?>, <?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?></span></u> and that he/she is one of indigents in our barangay.</h2>
+                                        
+                                            <h2 class="mt-5" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].'. '.$resident['lastname']) ?></u>, </span>
+                                            is of legal age, is a bonafide resident of <u><span class="fw-bold" style="font-size:25px">Purok <?= ucwords($resident['purok']) ?>, <?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?></span></u> and that he/she is one of indigents in our barangay.</h2>
                                             <h2 class="mt-5" style="text-indent: 40px; text-align: justify;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2><br><br>
                                             <h2 class="mt-5" style="text-indent: 40px;">Issued this <span class="fw-bold" style="font-size:20px"><u><?= date('m/d/Y') ?></u>.</span></h2>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-3 text-right mr-5" style="margin-top:200px">
                                                 <h1 class="fw-bold mb-0 text-uppercase"><?= ucwords($captain['name']) ?></h1>
-                                                <p class="mr-5">PUNONG BARANGAY</p>
+                                                <p class="mr-5 ">PUNONG BARANGAY</p>
                                             </div>
                                         </div>
                                     </div>

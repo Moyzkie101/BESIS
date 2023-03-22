@@ -101,14 +101,14 @@
                                                 <h1 class="mt-4 fw-bold"><u>OFFICE OF THE BARANGAY CAPTAIN</u></h1>
                                             </div>
                                             <div class="text-center">
-                                                <h1 class="mt-4 fw-bold mb-5" style="font-size:38px;color:darkblue">CERTIFICATE OF RESIDENCY</h1>
+                                                <h1 class="mt-4 fw-bold mb-5" style="font-size:38px;color:darkblue">CERTIFICATE OF RESIDENCY</h1><br>
                                             </div>
                                             <h2 class="mt-5 fw-bold">TO WHOM IT MAY CONCERN:</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px;">This is to certify that <span class="fw-bold" style="font-size:25px"><?= ucwords($resident['firstname'].' '.$resident['middlename'].' '.$resident['lastname']) ?></span>
-                                            , of legal age, <span class="fw-bold" style="font-size:25px"><?= ucwords($resident['gender']) ?></span>, <span class="fw-bold" style="font-size:25px"><?= ucwords($resident['civilstatus']) ?></span>,
-                                            and Filipino is a indigent of <span class="fw-bold" style="font-size:25px"><?= ucwords($brgy) ?></span> and that he/she is one of residency in our barangay.</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2>
-                                            <h2 class="mt-5">Issued this <span class="fw-bold" style="font-size:25px"><?= date('m/d/Y') ?>.</h2>
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].'. '.$resident['lastname']) ?></u></span>
+                                            , is of legal age, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['gender']) ?></u></span>, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['civilstatus']) ?></u></span>,
+                                            a <u><span class="fw-bold" style="font-size:25px">Filipino</span></u> citizen, and also an indigent of <span class="fw-bold" style="font-size:25px"><u><?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?></u></span> and that he/she is one of our barangay's residents.</h2>
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2>
+                                            <h2 class="mt-5">Issued this <span class="fw-bold" style="font-size:20px"><u><?= date('m/d/Y') ?></u>.</h2>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-3 text-right mr-5" style="margin-top:200px">
