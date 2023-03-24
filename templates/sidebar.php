@@ -56,7 +56,7 @@ $current_page = PageName();
                     <h4 class="text-section">Menu</h4>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php" target="blank">
+                    <a href="index.php" >
                         <i class="fa fa-globe"></i>
                         <p>View Home Page</p>
                     </a>

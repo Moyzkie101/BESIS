@@ -27,7 +27,7 @@
 				<div class="panel-header bg-primary-gradient">
 					<div class="page-inner">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
+							<div> 
 								<h2 class="text-white fw-bold">Generate Resident Profile</h2>
 							</div>
 						</div>
