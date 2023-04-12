@@ -135,7 +135,7 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -181,7 +181,7 @@
                         </div>
                         <div class="modal-footer">
                         
-                            <input type="text" id="id" name="id" value = "<?= $row['id']?>" >
+                            <input type="text" id="id" name="id" value = "<?= $row['id']?>" hidden>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>

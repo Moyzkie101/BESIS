@@ -310,7 +310,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>National ID No.</label>
-                                        <input type="text" class="form-control" name="national" placeholder="Enter National ID No." maxlength="16" required>
+                                        <input type="number" class="form-control" name="national" placeholder="Enter National ID No." onkeypress="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode == 46 && event.keyCode == 18 );" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Citizenship</label>
@@ -443,7 +443,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Contact Number</label>
-                                                <input type="text" class="form-control" placeholder="Enter Contact Number" name="number" maxlength="11" required>
+                                                <input type="number" class="form-control" placeholder="Enter Contact Number" name="number" onkeypress="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode == 46 && event.keyCode == 18 );" required>
                                             </div>
                                         </div>
                                         <div class="col">
@@ -532,7 +532,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>National ID No.</label>
-                                        <input type="text" class="form-control" name="national" id="nat_id" placeholder="Enter National ID No." maxlength="16" required>
+                                        <input type="number" class="form-control" name="national" id="nat_id" placeholder="Enter National ID No." onkeypress="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode == 46 && event.keyCode == 18 );" readonly required>
                                     </div>
                                     <div class="form-group">
                                         <label>Citizenship</label>
@@ -544,19 +544,19 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Firstname</label>
-                                                <input type="text" class="form-control" placeholder="Enter Firstname" name="fname" id="fname" required>
+                                                <input type="text" class="form-control" placeholder="Enter Firstname" name="fname" id="fname" required readonly>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Middlename</label>
-                                                <input type="text" class="form-control" placeholder="Enter Middlename" name="mname" id="mname" required>
+                                                <input type="text" class="form-control" placeholder="Enter Middlename" name="mname" id="mname" required readonly>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Lastname</label>
-                                                <input type="text" class="form-control" placeholder="Enter Lastname" name="lname" id="lname" required>
+                                                <input type="text" class="form-control" placeholder="Enter Lastname" name="lname" id="lname" required readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -564,7 +564,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Alias</label>
-                                                <input type="text" class="form-control" placeholder="Enter Alias" id="alias" name="alias" required>
+                                                <input type="text" class="form-control" placeholder="Enter Alias" id="alias" name="alias" required readonly>
                                             </div>
                                         </div>
                                          <div class="col">
@@ -600,13 +600,13 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Place of Birth</label>
-                                                <input type="text" class="form-control" placeholder="Enter Birthplace" name="bplace" id="bplace" required>
+                                                <input type="text" class="form-control" placeholder="Enter Birthplace" name="bplace" id="bplace" readonly required>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Birthdate</label>
-                                                <input type="date" class="form-control" placeholder="Enter Birthdate" name="bdate" id="bdate" required>
+                                                <input type="date" class="form-control" placeholder="Enter Birthdate" name="bdate" id="bdate"  required readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -631,7 +631,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Gender</label>
-                                                <select class="form-control" required name="gender" id="gender">
+                                                <select class="form-control" required name="gender" id="gender" readonly>
                                                     <option disabled selected>Select Gender</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
@@ -685,7 +685,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Contact Number</label>
-                                                <input type="text" class="form-control" placeholder="Enter Contact Number" name="number" id="number" maxlength="11" required>
+                                                <input type="number" class="form-control" placeholder="Enter Contact Number" name="number" id="number" maxlength="11" required>
                                             </div>
                                         </div>
                                         <div class="col">

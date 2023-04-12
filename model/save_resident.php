@@ -50,16 +50,16 @@
 				household`, `birthplace`, `birthdate`, `age`, `civilstatus`, `gender`, `purok`, `voterstatus`, `identified_as`, `phone`, `email`, `occupation`, `address`,`stat_id`) 
 
 
-							VALUES ('$national_id','$citizen','$profile','$fname','$mname','$lname','$alias','$household','$bplace','$bdate', DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), '$bdate')), '%Y') + 0, '$
+							VALUES ('$national_id','$citizen','$profile','$fname','$mname','$lname','$alias','$household','$bplace','$bdate', DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), '$bdate')), '%Y') + 0, 
+							'$cstatus','$gender','$purok','$vstatus','$identity_as','$number','$email','$occupation','$fourps','$address','$status')";
 
-							cstatus','$gender','$purok','$vstatus','$identity_as','$number','$email','$occupation','$fourps','$address','$status')";
-
+				
 				if($conn->query($query) === true){
 
 
-		    $m = $_SESSION['username']." added ". $fname ." ". $mname ." ". $lname ." from Resident Information"; 
+		    		$m = $_SESSION['username']." added ". $fname ." ". $mname ." ". $lname ." from Resident Information"; 
 
-		     $conn->query("insert into history_log values(NULL,".$_SESSION['id'].",'".$_SESSION['username']."','".date('h:i a')."','".date('m/d/Y')."','".$m."');");
+		    		$conn->query("insert into history_log values(NULL,".$_SESSION['id'].",'".$_SESSION['username']."','".date('h:i a')."','".date('m/d/Y')."','".$m."');");
 
 
 
@@ -88,9 +88,9 @@
  // history log executes
 
 				if($conn->query($query) === true){
-
+ 
 					$m = $_SESSION['username']." added ". $fname ." ". $mname ." ". $lname ." from Resident Information.";
-		     $conn->query("insert into history_log values(NULL,".$_SESSION['id'].",'".$_SESSION['username']."','".date('h:i a')."','".date('m/d/Y')."','".$m."');");
+		     		$conn->query("insert into history_log values(NULL,".$_SESSION['id'].",'".$_SESSION['username']."','".date('h:i a')."','".date('m/d/Y')."','".$m."');");
 
 
 					$_SESSION['message'] = 'Resident Information has been saved!';
