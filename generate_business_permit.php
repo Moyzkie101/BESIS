@@ -12,7 +12,7 @@
 <html lang="en">
 <head>
 	<?php include 'templates/header.php' ?>
-	<title>Business Permit -  BIS</title>
+	<title>Business Permit -  BESIS</title>
     <style>
         @page  
         { 

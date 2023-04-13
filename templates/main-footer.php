@@ -67,12 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Dashboard Image</label><br>
-                        <img src="<?= !empty($db_img) ? 'assets/uploads/'.$db_img : 'assets/img/bg-abstract.png' ?>" class="img-fluid">
-                        <input type="file" class='form-control' name="db_img" accept="image/*">
-                    </div>
-                    <small class="form-text text-muted">Note: pls upload only image and not more than 20MB.</small>
+                   
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
