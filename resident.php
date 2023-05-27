@@ -52,7 +52,7 @@
 
            $('.filter_status').change(function(){
 
-                 window.location.href = "http://localhost/bis/resident.php?id="+$(this).val();
+                 window.location.href = "http://localhost/BESIS/resident.php?id="+$(this).val();
            });
      });
  </script>
