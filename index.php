@@ -1,5 +1,5 @@
 <!-- <?php 
-$database	= 'barsims';
+$database	= 'besis';
 $username	= 'root';
 $host		= 'localhost';
 $password	= '';
