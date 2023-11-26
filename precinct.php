@@ -85,7 +85,7 @@
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
                                                                 <a type="button" data-toggle="tooltip" href="model/remove_precinct.php?id=<?= $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this precinct?');" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                                    <i class="fa fa-times"></i>
+                                                                    <i class="fa fa-trash"></i>
                                                                 </a>
                                                             </div>
                                                         </td>

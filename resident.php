@@ -234,7 +234,7 @@
 																	<i class="fa fa-file"></i>
 																</a>
                                                                 <a type="button" data-toggle="tooltip" href="model/remove_resident.php?id=<?= $row['id'] ?>&user_id=<?= $_SESSION['id'] ?>&username=<?= $_SESSION['username'] ?>&fullname=<?= $row['firstname'].' '. $row['lastname'] ?>" onclick="return confirm('Are you sure you want to delete this resident?');" class="btn btn-link btn-danger" data-original-title="Remove">
-																	<i class="fa fa-times"></i>
+																	<i class="fa fa-trash"></i>
 																</a>
                                                                 <?php endif ?>
 															</div>

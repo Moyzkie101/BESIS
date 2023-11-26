@@ -125,7 +125,7 @@
 																	<?php if($_SESSION['role']=='administrator'):?>
 																	<a type="button" data-toggle="tooltip" data-name= "<?= $row['fullname'] ?>" href="model/remove_request.php?id=<?= $row['id'] ?>&user_id=<?php echo $_SESSION['id'] ?>&username= <?php echo $_SESSION['username']; ?>&name=<?= $row['fullname'] ?>"
 																	 onclick="return confirm('Are you sure you want to delete this request?');" class="btn btn-link btn-danger" data-original-title="Remove">
-																		<i class="fa fa-times"></i>
+																		<i class="fa fa-trash"></i>
 																	</a>
 																	<?php  ?>
 																</td>

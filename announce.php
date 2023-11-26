@@ -113,7 +113,7 @@
                                                             </div>
                                                             <div class="form-button-action">
                                                                 <a href="model/remove_announcement.php?id=<?= $row['id'] ?>&filename=<?= $row['uploads'] ?>" type="button" data-toggle="tooltip" class="btn btn-link btn-danger" data-original-title="Remove Announce" onclick="return confirm('Are you sure you want to Delete this Announce?');">
-                                                                    <i class="fa fa-times">
+                                                                    <i class="fa fa-trash">
                                                                         
                                                                     </i>
                                                                 </a>

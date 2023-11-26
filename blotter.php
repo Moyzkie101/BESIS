@@ -126,7 +126,7 @@
                                                             
 															<?php if(isset($_SESSION['username']) && $_SESSION['role']=='administrator'):?>
 															<a type="button" data-toggle="tooltip" href="model/remove_blotter.php?id=<?= $row['id'] ?>&user_id=<?= $_SESSION['id'] ?>&username=<?= $_SESSION['username'] ?>&fullname=<?= $row['respondent'] ?> " onclick="return confirm('Are you sure you want to delete this blotter?');" class="btn btn-link btn-danger" data-original-title="Remove">
-																<i class="fa fa-times"></i>
+																<i class="fa fa-trash"></i>
 															</a>
 															<?php endif ?></div>
 														</td>
