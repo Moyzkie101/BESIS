@@ -11,8 +11,9 @@
 
 	$rows = $result1->fetch_assoc();
 
-
-	
+	$query2 = "SELECT * FROM `tblresident` INNER JOIN tbl_users ON tblresident.id=tbl_users.resident_id WHERE tbl_users.id='".$_SESSION['id']."'";
+	$result3 = $conn->query($query2);
+    $resident = $result3->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +64,9 @@
 </head>
 <style type="text/css">/*===================== 	Premery bg color =====================*/
 
+	.dropdown {
+		display: none;
+		}
 
 :root {	--primary: #5691cf;	--sc-primary: #5691cf;}
 
@@ -254,62 +258,30 @@
 					                <label for="firstName">Full Name  (<i> Kumpletong Pangalan </i>)</label>
 					                <input
 					                  type="text"
-					                  placeholder="Indicate Your Full Name"
+									  value="<?= ucwords($resident['firstname'].' '.substr($resident['middlename'],0, 1).'. '.$resident['lastname']) ?>"
 					                  class="form-control"
 					                  id="firstName"
-					                  name="firstName"  required
+					                  name="firstName"
+									  disabled readonly
 					                />
 					              	</div>
-					              	<div class="form-group">
-					                <label for="lastName">National ID:</label>
-					                <input
-					                  type="text"
-					                  placeholder="Indicate National ID"
-					                  class="form-control"
-					                  id="lastName"
-					                  name="lastName" maxlength="16" required
-					                />
-					              	</div>
-					              	<div class="form-group">
-					                <label for="gcontact">Email Address/Contact #:</label>
-					                <input
-					                  type="text"
-					                  placeholder="brgy@gmail.com/ 09999999999"
-					                  class="form-control"
-					                  id="gcontact"
-					                  name="gcontact"    required  
-					                />
-					              	</div>
-					              	<div class="form-group">
-					                	<label for="gender">Gender  (<i> Lalaki o Babaye </i>)</label>
-					                		<div>
-					                  			<label for="male" class="radio-inline"
-					                    		><input
-							                      type="radio"
-							                      name="gender"
-							                      value="Male"
-							                      id="male"  required
-					                    		  /> Male  (<i> lalaki </i>)</label>&nbsp;
-					                  			<label for="female" class="radio-inline"
-					                    		><input
-							                      type="radio"
-							                      name="gender"
-							                      value="Female"
-							                      id="Female"  required
-					                    		  /> Female  (<i> Babaye </i>)</label>
-					                		</div>
-					              	</div>
-					              	<div class="form-group">
-						                <label for="age">Age  (<i> Edad </i>)</label>
-						                <input
-						                  type="number"
-						                  placeholder="Indicate Your Age"
-						                  class="form-control"
-						                  id="age"
-						                  name="age"
-						                />
-						            </div>
 						            <div class="form-group">
+										<label for="password">Form to Request:   (<i> Kinahanglan nga Dokumento </i>)</label>
+										<div>
+										<input type="radio" id="radioBtn" name="showDropdown" onclick="toggleDropdown()">
+										<label for="radioBtn">Barangay Clearance</label>
+										
+										<div id="dropdown" class="dropdown">
+											<label>For what purpose?  (<i> Unsa ang tumong? </i>)</label>
+											<select class="form-control">
+											<option value="option1">Option 1</option>
+											<option value="option2">Option 2</option>
+											<option value="option3">Option 3</option>
+											</select>
+										</div>	
+										</div>									
+									</div>
+						            <!-- <div class="form-group">
 						                <label for="password">Form to Request:   (<i> Kinahanglan nga Dokumento </i>)</label>             
 						                <div>
 						                	<input
@@ -342,6 +314,16 @@
 						                    /> Issuance of Summons</label>
 						                </div>
 						            </div>
+									<div class="form-group">
+					                <label for="firstName">For what purpose?  (<i> Unsa ang tumong? </i>)</label>
+					                <input
+					                  type="text"
+									  placeholder="State for purpose"
+					                  class="form-control"
+					                  id="#"
+					                  name="#"  required
+					                />
+					              	</div> -->
 						            <div class="form-group">
 						            	<h5><center>"Note: Make sure to input correct details, otherwise, the request will be denied"</center></h5><h5><center>"Timan-i: Ibutang ang saktong impormasyon mahitungod kanimo, mahimong invalid kung dili kini magtakdo basi sa record sa sa atong system"</center></h5>
 						            </div>
@@ -581,6 +563,12 @@
 	function vanish(){
 		loader.classList.add("disppear");
 		$('body').removeClass('window-loading');
+	}
+</script>
+<script>
+	function toggleDropdown() {
+	var dropdown = document.getElementById("dropdown");
+	dropdown.style.display = (document.getElementById("radioBtn").checked) ? "block" : "none";
 	}
 </script>
 </body>

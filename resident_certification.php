@@ -1,6 +1,6 @@
 <?php include 'server/server.php' ?>
 <?php 
-	$query = "SELECT * FROM tblresident";
+	$query = "SELECT * FROM tblrequest";
     $result = $conn->query($query);
 
     $resident = array();
@@ -15,6 +15,24 @@
 	while($row = $result1->fetch_assoc()){
 		$purok[] = $row; 
 	}
+
+	if(isset($_SESSION['role'])){
+		if($_SESSION['role'] =='administrator'){
+			$off_q = "SELECT * FROM tblrequest WHERE status='Done'";
+		}else{
+			$off_q = "SELECT * FROM tblrequest WHERE status='Done' ORDER BY id DESC";
+		}
+	}else{
+		$off_q = "SELECT * FROM tblrequest WHERE status='Done' ORDER BY id DESC";
+	}
+	
+	$res_o = $conn->query($off_q);
+
+	$official = array();
+	while($row = $res_o->fetch_assoc()){
+		$official[] = $row; 
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,14 +103,14 @@
 												</tr>
 											</thead>
 											<tbody>
-												<?php if(!empty($resident)): ?>
-													<?php $no=1; foreach($resident as $row): ?>
+												<?php if(!empty($official)): ?>
+													<?php $no=1; foreach($official as $row): ?>
 													<tr>
 														<td>
-                                                            <div class="avatar avatar-xs">
+                                                            <!-- <div class="avatar avatar-xs">
                                                                 <img src="<?= preg_match('/data:image/i', $row['picture']) ? $row['picture'] : 'assets/uploads/resident_profile/'.$row['picture'] ?>" alt="Resident Profile" class="avatar-img rounded-circle">
-                                                            </div>
-                                                            <?= ucwords($row['lastname'].', '.$row['firstname'].' '.$row['middlename']) ?>
+                                                            </div> -->
+                                                            <?= ucwords($row['fullname']) ?>
                                                         </td>
 														<td><?= $row['national_id'] ?></td>
 														<td><?= $row['alias'] ?></td>

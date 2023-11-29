@@ -1,7 +1,7 @@
 <?php include 'server/server.php' ?>
 <?php 
     $id = $_GET['id'];
-	$query = "SELECT * FROM tblresident WHERE id='$id'";
+	$query = "SELECT * FROM tblrequest WHERE id='$id'";
     $result = $conn->query($query);
     $resident = $result->fetch_assoc();
 
@@ -95,7 +95,7 @@
                                                 <h1 class="mt-4 fw-bold mb-5">BARANGAY CLEARANCE</h1><br>
                                             </div>
                                             <h2 class="mt-5">TO WHOM IT MAY CONCERN:</h2>
-                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['firstname'].' '.$resident['middlename'].'. '.$resident['lastname']) ?></u>,</span>
+                                            <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This is to certify that <span class="fw-bold" style="font-size:25px"><u><?= ucwords($resident['fullname']) ?></u>,</span>
                                              is of legal age, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['gender']) ?></u></span>, <span class="fw-bold" style="font-size:25px"><u><?= strtolower($resident['civilstatus']) ?></u></span>,
                                             and a <span class="fw-bold" style="font-size:25px"><u> <?= ucwords($resident['citizenship']) ?></u></span> citizen, is a resident of <span class="fw-bold" style="font-size:25px"><u><?= ucwords($brgy) ?>, <?= ucwords($town) ?>, <?= ucwords($province) ?></u>, </span>has never been charged of any crime or misdemeanor as to date of issue, and is a person of good moral character.</h2>
                                             <h2 class="mt-3" style="text-indent: 40px; text-align: justify;">This certification/clearance is hereby issued to the above-named person for whatever legal purpose it may serve him/her best.</h2>
