@@ -64,9 +64,25 @@
 </head>
 <style type="text/css">/*===================== 	Premery bg color =====================*/
 
-	.dropdown {
-		display: none;
-		}
+	/* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+	.header{
+		position: relative;
+		z-index: 999;
+	}
+	.dropdown, .checkbox-dropdown {
+      display: none;
+    }
 
 :root {	--primary: #5691cf;	--sc-primary: #5691cf;}
 
@@ -241,103 +257,141 @@
 					?>
 
 				</ul>
+			</div>	
+		</div>
 
-					<!-- ==== MODAL ==== -->
-				<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><br><br><br>
-					<div class="modal-dialog modal-xl" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-	                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                                <span aria-hidden="true">&times;</span>
-	                            </button>
-							</div>
-							<div class="modal-body">
-								<form action="connect.php" method="post">
-									<h4 style="text-align: center;">Request Form</h4><br>
-									<div class="form-group">
-					                <label for="firstName">Full Name  (<i> Kumpletong Pangalan </i>)</label>
-					                <input
-					                  type="text"
-									  value="<?= ucwords($resident['firstname'].' '.substr($resident['middlename'],0, 1).'. '.$resident['lastname']) ?>"
-					                  class="form-control"
-					                  id="firstName"
-					                  name="firstName"
-									  disabled readonly
-					                />
-					              	</div>
-						            <div class="form-group">
-										<label for="password">Form to Request:   (<i> Kinahanglan nga Dokumento </i>)</label>
-										<div>
-										<input type="radio" id="radioBtn" name="showDropdown" onclick="toggleDropdown()">
-										<label for="radioBtn">Barangay Clearance</label>
-										
-										<div id="dropdown" class="dropdown">
-											<label>For what purpose?  (<i> Unsa ang tumong? </i>)</label>
-											<select class="form-control">
-											<option value="option1">Option 1</option>
-											<option value="option2">Option 2</option>
-											<option value="option3">Option 3</option>
-											</select>
-										</div>	
-										</div>									
-									</div>
-						            <!-- <div class="form-group">
-						                <label for="password">Form to Request:   (<i> Kinahanglan nga Dokumento </i>)</label>             
-						                <div>
-						                	<input
-						                      type="radio"
-						                      name="forms"
-						                      value="Barangay Clearance"
-						                      id="forms"  required
-						                    /> <label> Barangay Clearance</label>&nbsp;
-						                  	<label for="female" class="radio-inline"
-						                    ><input
-						                      type="radio"
-						                      name="forms"
-						                      value="Use of Barangay Facilities"
-						                      id="forms"
-						                    /> Use of Barangay Facilities</label><br>
+					<!-- ==== START MODAL ==== -->
 
-						                  	<label for="gg" class="radio-inline"
-						                    ><input
-						                      type="radio"
-						                      name="forms"
-						                      value="Barangay Business Clearance"
-						                      id="forms"
-						                    /> Barangay Business Clearance</label>&nbsp;
-						                    <label for="gg" class="radio-inline"
-						                    ><input
-						                      type="radio"
-						                      name="forms"
-						                      value="Issuance of Summons"
-						                      id="forms"
-						                    /> Issuance of Summons</label>
-						                </div>
-						            </div>
-									<div class="form-group">
-					                <label for="firstName">For what purpose?  (<i> Unsa ang tumong? </i>)</label>
-					                <input
-					                  type="text"
-									  placeholder="State for purpose"
-					                  class="form-control"
-					                  id="#"
-					                  name="#"  required
-					                />
-					              	</div> -->
-						            <div class="form-group">
-						            	<h5><center>"Note: Make sure to input correct details, otherwise, the request will be denied"</center></h5><h5><center>"Timan-i: Ibutang ang saktong impormasyon mahitungod kanimo, mahimong invalid kung dili kini magtakdo basi sa record sa sa atong system"</center></h5>
-						            </div>
-						            <div class="modal-footer">
-						        		<input type="submit" class="btn btn-primary">
-						            </div>
-								</form>
+					<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Request Barangay Form</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<form method="POST" action="connect.php" enctype="multipart/form-data">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<label for="firstName">Full Name  (<i> Kumpletong Pangalan </i>)</label>
+													<input type="text" value="<?= ucwords($resident['firstname'].' '.substr($resident['middlename'],0, 1).'. '.$resident['lastname']) ?>" class="form-control" id="firstName" name="firstName" disabled readonly/>
+												</div>
+												<div class="form-group">
+													<div>
+														<label for="password">Form to Request:   (<i> Kinahanglan nga Dokumento </i>)</label>
+													</div>
+													<div>
+														<input type="radio" id="radioBtn1" name="showDropdown" onclick="toggleDropdown('dropdown1')">
+														<label for="radioBtn1">Barangay Clearance</label>
+													</div>
+													<div id="dropdown1" class="dropdown">
+														<div class="form-group">
+															<label for="dropdownList1">For what purpose?  (<i> Unsa ang tumong? </i>)</label>
+															
+															<select id="dropdownList1" class="dropdown-menu">
+																<option disabled selected>Select for purposes</option>
+																<option value="Local Employment">Local Employment</option>
+																<option value="Abroad">Abroad</option>
+																<option value="School">School</option>
+																<option value="Senior Citizen">Senior Citizen</option>
+																<option value="Any Legal">Any Legal</option>
+																<option value="Residency">Residency</option>
+																<option value="Indigency">Indigency</option>
+																<option value="DST O.R">DST O.R</option>
+															</select>
+														</div>	
+													</div>
+													<div>
+														<input type="radio" id="radioBtn2" name="showDropdown" onclick="toggleDropdown('dropdown2')">
+														<label for="radioBtn2">Use of Barangay Facilities</label>
+													</div>
+													<div id="dropdown2" class="dropdown">
+														<div class="form-group">
+															<label for="dropdownList2">For what purpose?  (<i> Unsa ang tumong? </i>)</label>
+															<div class="form-group">
+																<div>
+																	<input type="checkbox" id="checkBox1" onclick="toggleCheckboxDropdown('checkBox1', 'checkboxDropdown1')">
+																	<label for="checkBox1">Table/s</label>
+																	<div id="checkboxDropdown1" class="checkbox-dropdown">
+																	<!-- Dropdown content for Table/s -->
+																	<label for="checkboxDropdownList">How many? (<i> Pila kabuok? </i>)</label>
+																	<input type="number" class="form-control" placeholder="Enter How many Quantity"  onkeypress="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode == 46 && event.keyCode == 18 );">
+																	</div>
+																</div>
+																<div>
+																	<input type="checkbox" id="checkBox2" onclick="toggleCheckboxDropdown('checkBox2', 'checkboxDropdown2')">
+																	<label for="checkBox2">Chair/s</label>
+																	<div id="checkboxDropdown2" class="checkbox-dropdown">
+																	<!-- Dropdown content for Chair/s -->
+																	<label for="checkboxDropdownList">How many? (<i> Pila kabuok? </i>)</label>
+																	<input type="number" class="form-control" placeholder="Enter How many Quantity"  onkeypress="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode == 46 && event.keyCode == 18 );">
+																	</div>
+																</div>
+																<div>
+																	<input type="checkbox" id="checkBox3" onclick="toggleCheckboxDropdown('checkBox3', 'checkboxDropdown3')">
+																	<label for="checkBox3">Tent/s</label>
+																	<div id="checkboxDropdown3" class="checkbox-dropdown">
+																	<!-- Dropdown content for Tent/s -->
+																	<label for="checkboxDropdownList">How many? (<i> Pila kabuok? </i>)</label>
+																	<input type="number" class="form-control" placeholder="Enter How many Quantity"  onkeypress="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode == 46 && event.keyCode == 18 );">
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div>
+														<input type="radio" id="radioBtn3" name="showDropdown" onclick="toggleDropdown('dropdown3')">
+														<label for="radioBtn3">Barangay Business Clearance</label>
+													</div>
+													<div id="dropdown3" class="dropdown">
+														<div class="form-group">
+															<label for="dropdownList3">For what purpose?  (<i> Unsa ang tumong? </i>)</label>
+															<select id="dropdownList3" class="dropdown-menu">
+																<option value="option7">Option 7</option>
+																<option value="option8">Option 8</option>
+																<option value="option9">Option 9</option>
+															</select>
+														</div>
+													</div>
+													<div>
+														<input type="radio" id="radioBtn4" name="showDropdown" onclick="toggleDropdown('dropdown4')">
+														<label for="radioBtn4">Issuance of Summons</label>
+													</div>
+													<div id="dropdown4" class="dropdown">
+														<div class="form-group">
+															<label for="dropdownList4">For what purpose?  (<i> Unsa ang tumong? </i>)</label>
+															<select id="dropdownList4" class="dropdown-menu">
+																<option value="option10">Option 10</option>
+																<option value="option11">Option 11</option>
+																<option value="option12">Option 12</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col">
+												<div class="form-group">
+													<h5><center>"Note: Make sure to input correct details, otherwise, the request will be denied"</center></h5><h5><center>"Timan-i: Ibutang ang saktong impormasyon mahitungod kanimo, mahimong invalid kung dili kini magtakdo basi sa record sa sa atong system"</center></h5>
+												</div>
+											</div>
+										</div>
+								</div>
+								<div class="modal-footer">
+									<input type="submit" class="btn btn-primary">
+								</div>
+									</form>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
 
-		</div>
+					<!-- ==== END MODAL ==== -->
+
+			
+
+		
 		<!-- Page Heading Box END ==== -->
         <!-- Page Content Box ==== -->
 		<div class="content-block">
@@ -566,11 +620,23 @@
 	}
 </script>
 <script>
-	function toggleDropdown() {
-	var dropdown = document.getElementById("dropdown");
-	dropdown.style.display = (document.getElementById("radioBtn").checked) ? "block" : "none";
-	}
-</script>
+
+function toggleDropdown(dropdownId) {
+    var dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(function (dropdown) {
+      dropdown.style.display = 'none';
+    });
+
+    var selectedDropdown = document.getElementById(dropdownId);
+    selectedDropdown.style.display = 'block';
+  }
+
+  function toggleCheckboxDropdown(checkboxId, dropdownId) {
+    var checkbox = document.getElementById(checkboxId);
+    var checkboxDropdown = document.getElementById(dropdownId);
+    checkboxDropdown.style.display = checkbox.checked ? 'block' : 'none';
+  }
+  </script>
 </body>
 
 </html>
